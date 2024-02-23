@@ -7,6 +7,7 @@ public class JuegoEnVenta extends Juego{
     }
     public JuegoEnVenta(String titulo,String fabricante,int anyo,double precio,int numCopias){
         super(titulo,fabricante,anyo);
+        getNumTotal();
         this.precio = precio;
         this.numCopias = numCopias;
     }

@@ -8,6 +8,7 @@ public class JuegoEnAlquiler extends Juego implements Alquiler{
     }
     public JuegoEnAlquiler(String titulo,String fabricante,int anyo,double precio,int numCopias, int numDiasAlquilado){
         super(titulo,fabricante,anyo);
+        getNumTotal();
         this.precio = precio;
         this.numCopias = numCopias;
         this.numDiasAlquilado = numDiasAlquilado;
@@ -15,14 +16,14 @@ public class JuegoEnAlquiler extends Juego implements Alquiler{
 
     public JuegoEnAlquiler(JuegoEnAlquiler copiarJuego){
         super(copiarJuego.getTitulo(),copiarJuego.getFabricante(),copiarJuego.getanyo());
+        getNumTotal();
         precio = copiarJuego.precio;
         numCopias = copiarJuego.numCopias;
         numDiasAlquilado = copiarJuego.numDiasAlquilado;
     }
     
     public void alquilar(){
-        int total = getNumTotal();
-        numCopias = numCopias - total;
+        numCopias--;
     }
 
 

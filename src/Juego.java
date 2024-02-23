@@ -2,7 +2,7 @@ public abstract class Juego{
     private String titulo = "Sin titulo";
     private String fabricante = "Desconocido";
     private int anyo = 1970;
-    private int numTotal;
+    private static int numTotal;
 
     public Juego(){
         numTotal++;
@@ -43,8 +43,10 @@ public abstract class Juego{
     public void compareTo(Juego juego){
         if(this.titulo.length() < juego.titulo.length() || this.fabricante.length() < juego.fabricante.length() || this.anyo < juego.anyo){
             System.out.println("El juego es menor");
-        }else{
+        }else if(this.titulo.length() > juego.titulo.length() || this.fabricante.length() > juego.fabricante.length() || this.anyo > juego.anyo){
             System.out.println("El juego es mayor");
+        }else{
+            System.out.println("Son iguales");
         }
     }
 
